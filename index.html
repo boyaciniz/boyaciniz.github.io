@@ -1,103 +1,574 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>İstanbul Boya Badana Ustası | 1 Günde Profesyonel Ev Boyama</title>
+    <meta name="description" content="İstanbul geneli profesyonel boya badana, ev boyama, kapı boyama, alçı tamiratı ve lüks tadilat hizmetleri. 1 günde temiz teslimat! Hemen WhatsApp'tan ücretsiz teklif alın.">
+    <meta name="keywords" content="İstanbul boyacı, boya badana ustası, ev boyama, kapı boyama, daire boyama, boya badana fiyatları, ipek mat boya, tadilat ustası, temiz boyacı">
 
-<title>İstanbul Boya Badana Ustası | 1 Günde Ev Boyanır</title>
-<meta name="description" content="İstanbul geneli profesyonel boya badana, ev boyama, kapı boyama, daire boyama, alçı tamirat ve tadilat hizmetleri. Hemen WhatsApp'tan fiyat teklifi alın.">
-<meta name="keywords" content="İstanbul boyacı, boya badana ustası, İstanbul boya badana, ev boyama, kapı boyama, daire boyama, boya badana fiyatları, kapı boyama, iç cephe boyama, tadilat ustası">
+    <!-- Google Fonts & FontAwesome İkonları -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f4f7fb;color:#222}
-header{background:#071f3d;color:white;padding:16px 8%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo img{width:120px;border-radius:12px;background:white;padding:6px}
-nav a{color:white;text-decoration:none;margin:10px;font-weight:bold}
-.hero{background:linear-gradient(135deg,#071f3d,#0b4b8b,#ff7a00);color:white;padding:80px 8%;text-align:center}
-.hero h1{font-size:46px;margin:15px 0}
-.hero p{font-size:20px;max-width:850px;margin:auto}
-.btn{display:inline-block;background:#25D366;color:white;padding:15px 25px;border-radius:12px;text-decoration:none;font-weight:bold;margin:18px 8px}
-.btn.orange{background:#ff7a00}
-section{padding:55px 8%}
-h2{text-align:center;font-size:34px;color:#071f3d}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.card{background:white;padding:25px;border-radius:18px;box-shadow:0 8px 25px #0001;text-align:center}
-.card h3{color:#ff7a00}
-.dark{background:#071f3d;color:white}
-.dark h2{color:white}
-.contact{text-align:center;background:white}
-.phone{font-size:34px;font-weight:bold;color:#ff7a00}
-.insta{color:#e1306c;font-weight:bold;text-decoration:none}
-footer{background:#06182e;color:white;text-align:center;padding:25px}
-.float{position:fixed;right:18px;bottom:18px;background:#25D366;color:white;padding:16px 22px;border-radius:50px;text-decoration:none;font-weight:bold;box-shadow:0 5px 20px #0005}
-@media(max-width:700px){.hero h1{font-size:34px}nav{margin-top:10px}.logo img{width:95px}}
-</style>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #ff6b00;
+            --accent-hover: #e05e00;
+            --text-dark: #334155;
+            --text-light: #f8fafc;
+            --bg-light: #f8fafc;
+            --wa-green: #25D366;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- SAF CSS ANİMASYONLARI --- */
+        @keyframes fxFadeDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fxFadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fxZoomIn {
+            from { opacity: 0; transform: scale(0.92); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .anim-fade-down { animation: fxFadeDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .anim-fade-up { animation: fxFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .anim-zoom { animation: fxZoomIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 12px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Canlı Tasarlanan Logo Link Alanı */
+        .brand-logo {
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        .brand-logo:hover {
+            transform: scale(1.03);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        nav a:hover::after { width: 100%; }
+        nav a:hover { color: var(--accent); }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 20%, #1e3a8a 70%, #ff6b00 140%);
+            color: white;
+            padding: 200px 8% 140px 8%;
+            text-align: center;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 54px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero h1 span { color: var(--accent); }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-wa { background: var(--wa-green); color: white; }
+        .btn-wa:hover { background: #1ebd59; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        .btn-call { background: var(--accent); color: white; }
+        .btn-call:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 107, 0, 0.4); }
+
+        /* --- SECTIONS GENERAL --- */
+        section { padding: 90px 8%; }
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            font-size: 16px;
+        }
+
+        /* --- SERVICES (HİZMETLER) --- */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        .card:hover::before { transform: scaleX(1); }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        .card .icon-box {
+            font-size: 45px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .card p { color: #64748b; font-size: 15px; }
+
+        /* --- INFO SECTION (BOYA BİLGİSİ) --- */
+        .info-section { background: #f1f5f9; }
+        .info-grid {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        .info-content { flex: 1; min-width: 300px; }
+        .info-box {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+            border-left: 4px solid var(--accent);
+        }
+        .info-box h4 { font-size: 18px; color: var(--primary); margin-bottom: 5px; }
+        .info-box p { color: #64748b; font-size: 14.5px; }
+
+        /* --- PROCESS SECTION (SÜREÇ) --- */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .step {
+            text-align: center;
+            position: relative;
+            background: white;
+            padding: 30px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+        .step:hover { transform: translateY(-5px); }
+        .step-num {
+            width: 50px; height: 50px; background: var(--primary); color: white;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; font-weight: bold; font-size: 20px; margin: 0 auto 20px auto;
+            border: 4px solid #e2e8f0;
+            transition: background 0.3s;
+        }
+        .step:hover .step-num { background: var(--accent); }
+
+        /* --- WHY US (NEDEN BİZ) --- */
+        .dark { background: var(--primary); color: white; }
+        .dark .section-title { color: white; }
+        .dark .card { background: var(--secondary); border: none; }
+        .dark .card h3 { color: white; }
+        .dark .card p { color: #94a3b8; }
+
+        /* --- S.S.S --- */
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            padding: 22px; font-weight: 600; color: var(--primary);
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; user-select: none; transition: background 0.3s;
+        }
+        .faq-question:hover { background: #f8fafc; }
+        .faq-answer {
+            padding: 0 22px; max-height: 0; overflow: hidden;
+            transition: all 0.3s ease-out; color: #64748b; font-size: 15px;
+        }
+        .faq-item.active .faq-answer { padding: 0 22px 22px 22px; max-height: 200px; }
+        .faq-item.active .faq-question i { transform: rotate(180deg); color: var(--accent); }
+        .faq-question i { transition: transform 0.3s; }
+
+        /* --- CONTACT --- */
+        .contact { text-align: center; background: white; }
+        .phone { font-size: 42px; font-weight: 700; color: var(--accent); margin: 20px 0; }
+        .contact-grid {
+            display: flex; justify-content: center; gap: 40px; margin-top: 30px; flex-wrap: wrap;
+        }
+        .contact-item { font-size: 18px; color: var(--text-dark); display: flex; align-items: center; gap: 10px; }
+        .contact-item i { color: var(--accent); }
+        .insta { color: #e1306c; font-weight: 600; text-decoration: none; }
+
+        /* --- FOOTER --- */
+        footer { background: #020617; color: #94a3b8; text-align: center; padding: 40px 8%; font-size: 15px; }
+        footer p { margin-bottom: 10px; }
+        .seo-tags { font-size: 12px; color: #475569; margin-top: 15px; line-height: 1.8; }
+
+        /* --- FLOATING WHATSAPP --- */
+        .float {
+            position: fixed; right: 25px; bottom: 25px;
+            background: var(--wa-green); color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 32px; text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4); z-index: 999;
+            transition: all 0.3s ease;
+        }
+        .float:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* --- RESPONSIVE --- */
+        @media(max-width:768px){
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 16px; }
+            section { padding: 60px 5%; }
+            nav { display: none; }
+            .phone { font-size: 30px; }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">
-<img src="logo.png" alt="Boya Badana Ustası Logo">
-</div>
-<nav>
-<a href="#hizmetler">Hizmetler</a>
-<a href="#neden">Neden Biz?</a>
-<a href="#iletisim">İletişim</a>
-<a href="https://instagram.com/boyatadilat04" target="_blank">Instagram</a>
-</nav>
-</header>
+    <!-- SABİT ÜST MENÜ -->
+    <header>
+        <!-- KODLA ÇİZİLEN ULTRA MODERN VECTOR SVG LOGO -->
+        <a href="#" class="brand-logo">
+            <svg width="210" height="46" viewBox="0 0 210 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Rulo Fırça Grafiği -->
+                <g transform="translate(2, 2)">
+                    <!-- Boya Rulosu Silindiri -->
+                    <rect x="4" y="4" width="26" height="13" rx="3.5" fill="#ff6b00" />
+                    <!-- Fırçanın arkasındaki estetik boya izi çizgisi -->
+                    <path d="M6 17 v8 c0 2 1.5 3.5 3.5 3.5 h8 c1.5 0 3-1 3-2.5 s-1.5-2.5-3-2.5 h-4 c-1.5 0-2-1-2-2 v-4.5" stroke="#ff6b00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.35"/>
+                    <!-- Metal rulo sap gövdesi -->
+                    <path d="M30 10.5 h3.5 v11 h-14.5 v6" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <!-- Plastik Tutamaç Sapı -->
+                    <rect x="17.5" y="27" width="3.5" height="11" rx="1" fill="#ff6b00" />
+                </g>
+                <!-- Marka Metinleri (Poppins Fontu Entegre) -->
+                <text x="48" y="21" fill="#ffffff" font-family="'Poppins', sans-serif" font-weight="800" font-size="15" letter-spacing="0.8">İSTANBUL</text>
+                <text x="48" y="37" fill="#ff6b00" font-family="'Poppins', sans-serif" font-weight="700" font-size="12" letter-spacing="1.5">BOYA BADANA</text>
+            </svg>
+        </a>
+        
+        <nav>
+            <a href="#hizmetler">Hizmetler</a>
+            <a href="#bilgiler">Boya Rehberi</a>
+            <a href="#surec">Nasıl Çalışırız?</a>
+            <a href="#neden">Neden Biz?</a>
+            <a href="#faq">S.S.S.</a>
+            <a href="#iletisim">İletişim</a>
+            <a href="https://instagram.com/boyatadilat04" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        </nav>
+    </header>
 
-<div class="hero">
-<h1>İstanbul Geneli Boya Badana Hizmeti</h1>
-<p>Ev, daire, ofis, kapı boyama ve tadilat işleriniz için profesyonel, temiz ve hızlı işçilik. Uygun fiyatlı boya badana hizmeti için hemen teklif alın.</p>
-<a class="btn" href="https://wa.me/905374309904">WhatsApp'tan Teklif Al</a>
-<a class="btn orange" href="tel:05374309904">Hemen Ara</a>
-</div>
+    <!-- KUSURSUZ CSS ANİMASYONLU HERO ALANI -->
+    <div class="hero">
+        <h1 class="anim-fade-down">İstanbul Geneli <span>1 Günde</span> Boya Badana</h1>
+        <p class="anim-fade-up delay-1">Ev, daire ve ofisleriniz için eşyalarınızı sıfır riskle koruma altına alarak, profesyonel ekip ve dünya markası boyalarla mekanınızı baştan yaratıyoruz.</p>
+        <div class="btn-container anim-zoom delay-2">
+            <a class="btn btn-wa" href="https://wa.me/905374309904"><i class="fab fa-whatsapp"></i> WhatsApp'tan Fiyat Al</a>
+            <a class="btn btn-call" href="tel:05374309904"><i class="fa fa-phone"></i> Hemen Ara</a>
+        </div>
+    </div>
 
-<section id="hizmetler">
-<h2>Hizmetlerimiz</h2>
-<div class="cards">
-<div class="card"><h3>🎨 Boya Badana</h3><p>İstanbul geneli temiz ve kaliteli boya badana hizmeti.</p></div>
-<div class="card"><h3>🏠 Ev Boyama</h3><p>Daire, ev ve yaşam alanlarınız için profesyonel boyama.</p></div>
-<div class="card"><h3>🚪 Kapı Boyama</h3><p>Eski kapılarınızı yenilenmiş gibi gösteren kapı boyama hizmeti.</p></div>
-<div class="card"><h3>🔨 Alçı & Tadilat</h3><p>Duvar düzeltme, alçı, tamirat ve dekorasyon işleri.</p></div>
-<div class="card"><h3>🏢 Ofis Boyama</h3><p>İş yerleri ve ofisler için hızlı boya badana hizmeti.</p></div>
-<div class="card"><h3>🖌️ İç Cephe Boyama</h3><p>Kaliteli malzeme, temiz işçilik ve zamanında teslim.</p></div>
-</div>
-</section>
+    <!-- HİZMETLERİMİZ -->
+    <section id="hizmetler">
+        <h2 class="section-title">Neler Yapıyoruz?</h2>
+        <p class="section-subtitle">İhtiyacınıza uygun, birinci sınıf işçilik içeren profesyonel çözümlerimiz.</p>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-paint-roller"></i></div>
+                <h3>Lüks Boya Badana</h3>
+                <p>Silinebilir, leke tutmayan ipek mat ve yarı mat modern iç cephe boyama uygulamaları.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-home"></i></div>
+                <h3>Eşyalı Ev Boyama</h3>
+                <p>Tüm eşyalarınızı özenle paketleyip odanın ortasına topluyor, zeminleri mükemmel koruyoruz.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-door-open"></i></div>
+                <h3>Kapı & Panel Boyama</h3>
+                <p>Eskiyen, sararan Amerikan ve lake kapılarınızı hatasız ve pürüzsüz yüzeyle yeniliyoruz.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-hammer"></i></div>
+                <h3>Alçı & Tamirat</h3>
+                <p>Duvarlardaki çatlaklar, kabarmalar, delikler ve nem hasarları için profesyonel alçı ve astar tamiri.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-building"></i></div>
+                <h3>Ofis & İş Yeri</h3>
+                <p>Şirketinizin iş akışını bozmadan, hafta sonu veya hızlı gece vardiyalarıyla temiz boyama.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-brush"></i></div>
+                <h3>Detaylı Dekorasyon</h3>
+                <p>Çıtalama, duvar kağıdı, kartonpiyer ve modern trendlere uygun dekoratif duvar designs.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="neden" class="dark">
-<h2>Neden Bizi Seçmelisiniz?</h2>
-<div class="cards">
-<div class="card"><h3>✅ Temiz İşçilik</h3><p>Evinizi koruyarak düzenli çalışırız.</p></div>
-<div class="card"><h3>✅ Uygun Fiyat</h3><p>İşinize göre net fiyat teklifi veririz.</p></div>
-<div class="card"><h3>✅ İstanbul Geneli</h3><p>Pendik, Kartal, Tuzla, Maltepe, Kadıköy, Ümraniye ve tüm İstanbul.</p></div>
-</div>
-</section>
+    <!-- BOYA HAKKINDA UZMAN BİLGİLENDİRME -->
+    <section id="bilgiler" class="info-section">
+        <h2 class="section-title">Doğru Boya Nasıl Seçilir?</h2>
+        <p class="section-subtitle">Evini boyatacak müşterilerimiz için usta tavsiyeleri ve malzeme detayları.</p>
+        
+        <div class="info-grid">
+            <div class="info-content">
+                <div class="info-box">
+                    <h4><i class="fa fa-shield-halved" style="color:var(--accent)"></i> Silikonlu İpek Mat Boyalar (Tavsiyemiz)</h4>
+                    <p>Işığı mükemmel yansıtır, silinebilir ve leke tutmaz. Çocuklu aileler ve salonlar için en ideal ve en modern boya türüdür.</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fa fa-droplet-slash" style="color:var(--accent)"></i> Küf ve Rutubet Önleyici Boyalar</h4>
+                    <p>Özellikle banyo, mutfak ve kuzey cephe duvarlarda yaşanan kararma ve küflenmelere karşı özel anti-bakteriyel koruma sağlar.</p>
+                </div>
+                <div class="info-box">
+                    <h4><i class="fa fa-layer-group" style="color:var(--accent)"></i> Astar Uygulamasının Önemi</h4>
+                    <p>Doğrudan boya vurulmaz! Önce astar uygulanarak boyanın duvara yapışması sağlanır, böylece ileride dökülme ve kabarma kesinlikle yaşanmaz.</p>
+                </div>
+            </div>
+            <div class="info-content" style="background: var(--primary); color: white; padding: 40px; border-radius: 24px;">
+                <h3 style="color: var(--accent); margin-bottom: 15px;"><i class="fa fa-star"></i> Kullandığımız Markalar</h3>
+                <p style="color: #cbd5e1; margin-bottom: 25px;">Sadece kalitesi kanıtlanmış, koku yapmayan, kurşunsuz ve sağlığa zararsız premium markalarla çalışıyoruz:</p>
+                <ul style="list-style: none; font-weight: 600; font-size: 18px;">
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color:var(--wa-green)"></i> Jotun Boya Ürünleri</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color:var(--wa-green)"></i> Filli Boya (Momento Serisi)</li>
+                    <li style="margin-bottom: 12px;"><i class="fa fa-check-circle" style="color:var(--wa-green)"></i> Dyo (Teknoplast / Dinamik)</li>
+                    <li><i class="fa fa-check-circle" style="color:var(--wa-green)"></i> Marshall (Sil-Pak)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section>
-<h2>Google'da Aranan Hizmetler</h2>
-<p style="text-align:center;font-size:18px">
-İstanbul boyacı • boya badana ustası • ev boyama ustası • kapı boyama • daire boyama • boya badana fiyatları • iç cephe boyama • tadilat ustası
-</p>
-</section>
+    <!-- ÇALIŞMA SÜRECİ -->
+    <section id="surec">
+        <h2 class="section-title">1 Günde Teslim Sürecimiz Nasıl İşler?</h2>
+        <p class="section-subtitle">Söz verdiğimiz zamanda, profesyonel adımlarla evinizi yeniliyoruz.</p>
+        
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h4 style="margin-bottom:10px;">Ücretsiz Keşif & Teklif</h4>
+                <p style="font-size:14px; color:#64748b;">WhatsApp'tan veya yerinde inceleme yaparak net fiyatı belirleriz, sürpriz maliyet çıkmaz.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h4 style="margin-bottom:10px;">Maskeleme & Koruma</h4>
+                <p style="font-size:14px; color:#64748b;">Tüm parkeler, süpürgelikler, prizler ve eşyalar profesyonel brandalarla sıfır hata koruma altına alınır.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h4 style="margin-bottom:10px;">Tamirat & Boyama</h4>
+                <p style="font-size:14px; color:#64748b;">Çatlaklar alçılanır, zımparalanır. Ardından seçtiğiniz renkte 2 kat premium boya hassasiyetle vurulur.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h4 style="margin-bottom:10px;">Temizlik & Teslim</h4>
+                <p style="font-size:14px; color:#64748b;">Brandalar kaldırılır, yerler kontrol edilir. Eviniz size tertemiz ve pırıl pırıl teslim edilir.</p>
+            </div>
+        </div>
+    </section>
 
-<section id="iletisim" class="contact">
-<h2>İletişim</h2>
-<p class="phone">📞 0537 430 99 04</p>
-<p>📧 1gundeboyagelsin@gmail.com</p>
-<p>📍 İstanbul Geneli Hizmet</p>
-<p>📷 Instagram: <a class="insta" href="https://instagram.com/boyatadilat04" target="_blank">@boyatadilat04</a></p>
-<a class="btn" href="https://wa.me/905374309904">WhatsApp'tan Yaz</a>
-</section>
+    <!-- NEDEN BİZ? -->
+    <section id="neden" class="dark">
+        <h2 class="section-title">Neden Bizimle Çalışmalısınız?</h2>
+        <p class="section-subtitle" style="color:#94a3b8">İstanbul'un en güvenilir usta kadrosuyla çalışmanın farkını yaşayın.</p>
+        
+        <div class="cards">
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-user-shield"></i></div>
+                <h3>Eşya Garanti Güvencesi</h3>
+                <p>Çalışırken tek bir eşyanıza veya zemine boya damlamaz. Evinizi teslim aldığımız temizlikte bırakırız.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-wallet"></i></div>
+                <h3>Şeffaf Sabit Fiyat</h3>
+                <p>İş başında ne konuştuysak odur. Malzeme, işçilik her şey dahil net fiyat garantisi sunuyoruz.</p>
+            </div>
+            <div class="card">
+                <div class="icon-box"><i class="fa fa-map-location-dot"></i></div>
+                <h3>Tüm İstanbul'dayız</h3>
+                <p>Anadolu ve Avrupa Yakası ayırt etmeksizin Kartal, Pendik, Kadıköy, Beşiktaş ve tüm ilçelere hizmetimiz vardır.</p>
+            </div>
+        </div>
+    </section>
 
-<footer>
-© 2026 Boya Badana Ustası - İstanbul Boyacı Hizmeti
-</footer>
+    <!-- SIKÇA SORULAN SORULAR -->
+    <section id="faq">
+        <h2 class="section-title">Sıkça Sorulan Sorular</h2>
+        <p class="section-subtitle">Aklınıza takılabilecek soruların yanıtları.</p>
+        
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">Gerçekten 1 günde ev boyanır mı? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">Evet, evinizin büyüklüğüne göre usta sayımızı artırarak (2-3 usta) sabah başlayıp akşam saatlerinde anahtarınızı tertemiz teslim edebiliyoruz.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Boyayı siz mi getiriyorsunuz yoksa biz mi alıyoruz? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">Her iki seçenek de mevcuttur. Genellikle malzeme dahil anahtar teslim hizmet sunuyoruz. Dilediğiniz markanın dilediğiniz renk kodunu bize iletmeniz yeterlidir.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Fiyat neye göre belirleniyor? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">Fiyatlarımız dairenin kaç oda olduğuna (1+1, 2+1, 3+1), duvarların mevcut yıpranma/alçı durumuna ve kapı boyama isteyip istemediğinize göre değişiklik gösterir. WhatsApp'tan fotoğraf göndererek anında fiyat alabilirsiniz.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Evde derin çatlaklar veya rutubet var, tamir ediyor musunuz? <i class="fa fa-chevron-down"></i></div>
+                <div class="faq-answer">Evet, boya öncesinde kabaran yerlerin kazınması, derin çatlakların alçı ile dolgusu ve rutubetli alanlara özel izole astar uygulaması standart süreçlerimizin bir parçasıdır.</div>
+            </div>
+        </div>
+    </section>
 
-<a class="float" href="https://wa.me/905374309904">WhatsApp</a>
+    <!-- İLETİŞİM ALANI -->
+    <section id="iletisim" class="contact">
+        <h2 class="section-title">Hemen Ücretsiz Teklif Alın</h2>
+        <p class="section-subtitle">Evinizin resimlerini veya ölçülerini gönderin, dakikalar içinde fiyatlandıralım.</p>
+        
+        <p class="phone"><i class="fa fa-phone-volume"></i> 0537 430 99 04</p>
+        
+        <div class="contact-grid">
+            <div class="contact-item"><i class="fa fa-envelope"></i> 1gundeboyagelsin@gmail.com</div>
+            <div class="contact-item"><i class="fa fa-map-marker-alt"></i> İstanbul Geneli Servis</div>
+            <div class="contact-item"><i class="fab fa-instagram"></i> Instagram: <a class="insta" href="https://instagram.com/boyatadilat04" target="_blank">@boyatadilat04</a></div>
+        </div>
+        
+        <div style="margin-top: 40px;">
+            <a class="btn btn-wa" href="https://wa.me/905374309904" style="font-size:18px; padding:18px 40px;"><i class="fab fa-whatsapp"></i> WhatsApp'tan Hemen Yazın</a>
+        </div>
+    </section>
 
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Boya Badana Ustası - İstanbul Profesyonel Boyacı Hizmeti. Tüm Hakları Saklıdır.</p>
+        <p style="font-size: 13px; color: #64748b;">Hızlı, Güvenilir, Kusursuz İşçilik.</p>
+        <div class="seo-tags">
+            <strong>Hizmet Bölgelerimiz:</strong> Kadıköy Boyacı • Maltepe Boya Badana • Kartal Ev Boyama Ustası • Pendik Boyacı • Tuzla Boya Ustası • Ümraniye Daire Boyama • Ataşehir İç Cephe Boyama • Üsküdar Boya Ustası • Çekmeköy Alçı Tadilat Ustası ve Tüm İstanbul.
+        </div>
+    </footer>
+
+    <!-- SABİT UÇAN WHATSAPP BUTONU -->
+    <a class="float" href="https://wa.me/905374309904" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Sıkça Sorulan Sorular Akordiyon Sistemi
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
